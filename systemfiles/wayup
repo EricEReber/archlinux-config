@@ -1,0 +1,28 @@
+#!/bin/sh
+
+# export XDG_SESSION_DESKTOP=gnome
+# export XDG_CURRENT_DESKTOP=gnome
+# export DESKTOP_SESSION=gnome
+# export DISPLAY=:0
+
+export GDK_BACKEND="wayland,x11"
+export GTK_BACKEND=wayland
+
+export QT_QPA_PLATFORM=wayland
+
+export MOZ_ENABLE_WAYLAND=1
+export CLUTTER_BACKEND=wayland
+export SDL_VIDEODRIVER=wayland
+
+export WLR_DRM_DEVICES=/dev/dri/card0
+
+export EDITOR=nvim
+export SSB_HOME="$XDG_DATA_HOME"/zoom
+
+# nmcli connection up eduroam
+
+# Dette er for aa fikse at man kan velge ulike window managers, default er gnome
+WM="${@:-sway}"
+
+# andre muligheter er: gnome-session
+dbus-run-session -- $WM

@@ -1,0 +1,4 @@
+term=alacritty
+key_up=K
+key_down=J
+insensitive=true

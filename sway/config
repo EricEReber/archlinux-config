@@ -1,0 +1,194 @@
+# Logo key. Use Mod1 for Alt.
+set $mod Mod4
+set $left h
+set $down j
+set $up k
+set $right l
+set $term alacritty
+set $menu wofi --show run
+
+font pango:SourceCodePro Medium 13
+
+### Output configuration
+output * bg $XDG_CONFIG_HOME/sway/backgrounds/union.png fill
+#
+# Example configuration:
+#
+#   output HDMI-A-1 resolution 1920x1080 position 1920,0
+#
+# You can get the names of your outputs by running: swaymsg -t get_outputs
+
+### Idle configuration
+exec swayidle -w \
+         timeout 900 'swaylock' \
+         timeout 1500 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+         before-sleep 'swaylock'
+### Key bindings
+bindsym $mod+Return exec $term
+bindsym $mod+x kill
+bindsym $mod+d exec $menu
+
+# Drag floating windows by holding down $mod and left mouse button.
+floating_modifier $mod normal
+
+# Reload the configuration file
+bindsym $mod+Shift+r reload
+
+# Exit sway (logs you out of your Wayland session)
+bindsym $mod+Shift+e exec swaymsg exit
+
+# Lock pc
+bindsym $mod+p exec swaylock
+
+# Moving around:
+# Move your focus around
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
+
+# Move the focused window with the same, but add Shift
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
+
+# Workspaces:
+
+# Switch to workspace
+bindsym $mod+1 workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+4 workspace number 4
+bindsym $mod+5 workspace number 5
+bindsym $mod+6 workspace number 6
+bindsym $mod+7 workspace number 7
+bindsym $mod+8 workspace number 8
+bindsym $mod+9 workspace number 9
+bindsym $mod+0 workspace number 10
+# Move focused container to workspace
+
+# bindsym $mod+Shift+1 move container to workspace number 1
+# bindsym $mod+Shift+2 move container to workspace number 2
+# bindsym $mod+Shift+3 move container to workspace number 3
+# bindsym $mod+Shift+4 move container to workspace number 4
+# bindsym $mod+Shift+5 move container to workspace number 5
+# bindsym $mod+Shift+6 move container to workspace number 6
+# bindsym $mod+Shift+7 move container to workspace number 7
+# bindsym $mod+Shift+8 move container to workspace number 8
+# bindsym $mod+Shift+9 move container to workspace number 9
+# bindsym $mod+Shift+0 move container to workspace number 10
+
+
+# equivalent to shift+num but can also be triggered by the symbols
+bindsym $mod+exclam move container to workspace number 1
+bindsym $mod+at move container to workspace number 2
+bindsym $mod+Shift+3 move container to workspace number 3
+bindsym $mod+dollar move container to workspace number 4
+bindsym $mod+percent move container to workspace number 5
+bindsym $mod+caret move container to workspace number 6
+bindsym $mod+ampersand move container to workspace number 7
+bindsym $mod+asterisk move container to workspace number 8
+bindsym $mod+parenleft move container to workspace number 9
+bindsym $mod+parenright move container to workspace number 10
+
+# Note: workspaces can have any name you want, not just numbers.
+# We just use 1-10 as the default.
+
+# Layout stuff:
+
+# You can "split" the current object of your focus with
+# $mod+b or $mod+v, for horizontal and vertical splits
+# respectively.
+bindsym $mod+b splith
+bindsym $mod+v splitv
+
+# Switch the current container between different layout styles
+# bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# Make the current focus fullscreen
+bindsym $mod+f fullscreen
+
+# Toggle the current focus between tiling and floating mode
+bindsym $mod+space floating toggle
+
+# Swap focus between the tiling area and the floating area
+bindsym $mod+Shift+space focus mode_toggle
+
+# Move focus to the parent container
+bindsym $mod+a focus parent
+
+# Scratchpad:
+
+# Sway has a "scratchpad", which is a bag of holding for windows.
+# You can send windows there and get them back later.
+
+# Move the currently focused window to the scratchpad
+bindsym $mod+s move scratchpad
+
+# Show the next scratchpad window or hide the focused scratchpad window.
+# If there are multiple scratchpad windows, this command cycles through them.
+bindsym $mod+g scratchpad show
+
+
+# Status Bar:
+
+bar {
+	swaybar_command waybar
+}
+
+default_border pixel 4
+gaps inner 10
+# gaps outer 5
+
+# window colors
+# 				border background text indicator
+client.focused '#00aaee' '#0088cc' '#ffffff' '#dddddd'
+client.unfocused '#222222' '#333333' '#888888' '#292d2e'
+
+
+# input section
+input * {
+	xkb_layout "us"
+	xkb_variant "altgr-intl"
+	pointer_accel 0.5
+	repeat_delay 400
+	repeat_rate 30
+	xkb_options caps:escape
+}
+
+input type:pointer {
+	pointer_accel 0.3
+	accel_profile "flat"
+}
+
+input type:touchpad {
+	pointer_accel 0.3
+	tap enabled
+}
+
+### media controls
+
+# volume
+bindsym XF86AudioMute exec amixer -q sset Master toggle
+bindsym XF86AudioRaiseVolume exec amixer -q sset Master 5%+
+bindsym XF86AudioLowerVolume exec amixer -q sset Master 5%-
+
+
+# bindsym XF86Tools exec imv ${XDG_CONFIG_HOME}/sway/backgrounds/cat.png -s crop
+# bindsym XF86Tools exec $term --command htop & imv ${XDG_CONFIG_HOME}/sway/backgrounds/cat.png -s crop
+bindsym XF86Tools exec imv "$XDG_CONFIG_HOME"/sway/backgrounds/cat.png
+
+# printscreen
+bindsym Print exec grim -g "$($XDG_CONFIG_HOME/sway/wl-select)" - | wl-copy
+
+# brightness
+bindsym XF86MonBrightnessDown exec light -U 20
+bindsym XF86MonBrightnessUp exec light -A 20
+
+include /etc/sway/config.d/*
+
+exec ${XDG_CONFIG_HOME}/sway/trans.py
+
