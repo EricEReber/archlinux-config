@@ -83,7 +83,10 @@ alias wifi='nmtui'
 alias pdf='pandoc -o'
 alias norge='setxkbmap -layout no'
 alias usa='setxkbmap -layout us -variant altgr-intl'
-alias bluetooth='blueman-manager'
+alias vpn='sudo openconnect https://sslvpn.ethz.ch'
+alias connect='bluetoothctl connect 14:3F:A6:A8:3E:A7'
+alias disconnect='bluetoothctl disconnect 14:3F:A6:A8:3E:A7'
+alias urlit='dogshit.txt'
 
 # this is to make latex installer work
 alias tlmgr='/usr/share/texmf-dist/scripts/texlive/tlmgr.pl --usermode'
@@ -97,6 +100,16 @@ function cd() {
     builtin cd "${new_directory}" && ls
 }
 
+# beautiful ranger-cd
+function ranger-cd {
+    tempfile="$(mktemp -t tmp.XXXXX)"
+    /usr/bin/ranger --choosedir="$tempfile" "${@:-$(pwd)}"
+    test -f "tempfile" &&
+    if ["$(cat -- "$tempfile")" != "$(echo -n 'pwd')" ]; then
+        builtin cd -- "$(cat "$tempfile")"
+    fi
+    rm -f -- "$tempfile"
+}
 
 # i dont remember why i did this
 gpg-connect-agent updatestartuptty /bye >/dev/null

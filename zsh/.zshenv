@@ -15,3 +15,10 @@ export XDG_CONFIG_DIRS="/etc/xdg"
 export GRIM_DEFAULT_DIR="$HOME/pictures"
 export PYTHONPATH="${PYTHONPATH}:/home/eric/documents/deep_learning/CNN"
 export GPG_TTY=$(tty)
+
+export MOZ_ENABLE_WAYLAND=1 firefox
+export MOZ_USE_XINPUT2=1
+
+export R_LIBS_USER=${XDG_DATA_HOME:-$HOME/.local/share}/R/%p-library/%v
+export R_PROFILE_USER=${XDG_CONFIG_HOME:-$HOME/.config}/R/rprofile
+export R_ENVIRON_USER=${XDG_CONFIG_HOME:-$HOME/.config}/R/renviron

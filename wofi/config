@@ -1,4 +1,4 @@
-term=alacritty
+term=kitty
 key_up=K
 key_down=J
 insensitive=true
