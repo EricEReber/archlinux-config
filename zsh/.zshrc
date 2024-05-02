@@ -73,6 +73,7 @@ alias py="python3"
 alias act='source env/bin/activate'
 
 # other aliases
+alias euler='ssh rebere@euler.ethz.ch'
 alias batt='upower -i /org/freedesktop/UPower/devices/battery_BAT1'
 alias sshuio='ssh -YC ericer@login.ifi.uio.no'
 alias uiomount='sshfs ericer@login.ifi.uio.no:. ~/ifilocal'
