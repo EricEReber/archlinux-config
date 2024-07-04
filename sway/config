@@ -127,8 +127,13 @@ bindsym $mod+g scratchpad show
 bar {
 	swaybar_command waybar
 }
-
-default_border pixel 4
+# sway fx stuff
+blur enable
+blur_passes 4
+blur_radius 4
+corner_radius 10
+default_border none
+default_dim_inactive 0.05
 gaps inner 10
 # gaps outer 5
 

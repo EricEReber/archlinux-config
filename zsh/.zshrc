@@ -80,6 +80,7 @@ alias uiomount='sshfs ericer@login.ifi.uio.no:. ~/ifilocal'
 alias :q='exit'
 alias c='z' # c is easier to hit
 alias pac='sudo pacman -Syu'
+alias yay='sudo yay -Syu'
 alias wifi='nmtui'
 alias pdf='pandoc -o'
 alias norge='setxkbmap -layout no'
