@@ -80,7 +80,7 @@ alias uiomount='sshfs ericer@login.ifi.uio.no:. ~/ifilocal'
 alias :q='exit'
 alias c='z' # c is easier to hit
 alias pac='sudo pacman -Syu'
-alias yayo='yay -Syu'
+alias yayy='yay -Syu'
 alias wifi='nmtui'
 alias pdf='pandoc -o'
 alias norge='setxkbmap -layout no'
@@ -94,6 +94,15 @@ alias jup='jupyter notebook'
 # this is to make latex installer work
 alias tlmgr='/usr/share/texmf-dist/scripts/texlive/tlmgr.pl --usermode'
 
+# jay hanssen special "ultradog"
+function ultradog() {
+    if [ $# -eq 0 ]; then
+        git add -u && git commit -m "do stuff" && git push
+        return 0
+    fi
+
+    git add -u && git commit -m "$*" && git push
+}
 # cd also runs ls
 function cd() {
     new_directory="$*";
