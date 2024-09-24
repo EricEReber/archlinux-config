@@ -80,7 +80,7 @@ alias uiomount='sshfs ericer@login.ifi.uio.no:. ~/ifilocal'
 alias :q='exit'
 alias c='z' # c is easier to hit
 alias pac='sudo pacman -Syu'
-alias yay='sudo yay -Syu'
+alias yayo='yay -Syu'
 alias wifi='nmtui'
 alias pdf='pandoc -o'
 alias norge='setxkbmap -layout no'
@@ -89,6 +89,7 @@ alias vpn='sudo openconnect https://sslvpn.ethz.ch'
 alias connect='bluetoothctl connect 14:3F:A6:A8:3E:A7'
 alias disconnect='bluetoothctl disconnect 14:3F:A6:A8:3E:A7'
 alias urlit='dogshit.txt'
+alias jup='jupyter notebook'
 
 # this is to make latex installer work
 alias tlmgr='/usr/share/texmf-dist/scripts/texlive/tlmgr.pl --usermode'
