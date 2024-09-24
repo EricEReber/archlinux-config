@@ -89,10 +89,13 @@ alias vpn='sudo openconnect https://sslvpn.ethz.ch'
 alias connect='bluetoothctl connect 14:3F:A6:A8:3E:A7'
 alias disconnect='bluetoothctl disconnect 14:3F:A6:A8:3E:A7'
 alias urlit='dogshit.txt'
-alias jup='jupyter notebook'
 
 # this is to make latex installer work
 alias tlmgr='/usr/share/texmf-dist/scripts/texlive/tlmgr.pl --usermode'
+
+function jup(){
+    jupyter notebook $*
+}
 
 # jay hanssen special "ultradog"
 function ultradog() {
