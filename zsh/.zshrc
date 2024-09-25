@@ -96,6 +96,8 @@ alias tlmgr='/usr/share/texmf-dist/scripts/texlive/tlmgr.pl --usermode'
 function jup(){
     jupyter notebook $*
 }
+zstyle ':completion:*:jup:*' file-patterns '*.ipynb'
+
 
 # jay hanssen special "ultradog"
 function ultradog() {
