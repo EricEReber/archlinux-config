@@ -98,6 +98,9 @@ function jup(){
 }
 zstyle ':completion:*:jup:*' file-patterns '*.ipynb'
 
+function biology(){
+    echo "I'm a biologist"
+}
 
 # jay hanssen special "ultradog"
 function ultradog() {
