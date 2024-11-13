@@ -73,7 +73,7 @@ alias py="python3"
 alias act='source env/bin/activate'
 
 # other aliases
-alias euler='ssh rebere@euler.ethz.ch'
+alias euler='ssh -Y rebere@euler.ethz.ch'
 alias batt='upower -i /org/freedesktop/UPower/devices/battery_BAT1'
 alias sshuio='ssh -YC ericer@login.ifi.uio.no'
 alias uiomount='sshfs ericer@login.ifi.uio.no:. ~/ifilocal'
@@ -89,6 +89,9 @@ alias vpn='sudo openconnect https://sslvpn.ethz.ch'
 alias connect='bluetoothctl connect 14:3F:A6:A8:3E:A7'
 alias disconnect='bluetoothctl disconnect 14:3F:A6:A8:3E:A7'
 alias urlit='dogshit.txt'
+alias bio='biology'
+alias dock='systemctl --user start docker-desktop'
+alias de='deactivate'
 
 # this is to make latex installer work
 alias tlmgr='/usr/share/texmf-dist/scripts/texlive/tlmgr.pl --usermode'
@@ -100,6 +103,15 @@ zstyle ':completion:*:jup:*' file-patterns '*.ipynb'
 
 function biology(){
     echo "I'm a biologist"
+}
+
+function venv(){
+    py -m venv --system-site-packages $*
+    source $*/bin/activate
+}
+
+function ve(){
+    source $*/bin/activate
 }
 
 # jay hanssen special "ultradog"
