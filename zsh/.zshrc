@@ -107,11 +107,11 @@ function biology(){
 
 function venv(){
     py -m venv --system-site-packages $*
-    source $*/bin/activate
+# source $*/bin/activate  # commented out by conda initialize
 }
 
 function ve(){
-    source $*/bin/activate
+# source $*/bin/activate  # commented out by conda initialize
 }
 
 # jay hanssen special "ultradog"
