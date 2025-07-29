@@ -179,8 +179,8 @@ bindsym XF86Tools exec imv "$XDG_CONFIG_HOME"/sway/backgrounds/sched.png
 bindsym Print exec grim -g "$($XDG_CONFIG_HOME/sway/wl-select)" - | wl-copy
 
 # brightness
-bindsym XF86MonBrightnessDown exec light -U 10
-bindsym XF86MonBrightnessUp exec light -A 10
+bindsym XF86MonBrightnessDown exec brillo -u 15000 -U 10
+bindsym XF86MonBrightnessUp exec brillo -u 15000 -A 10
 
 include /etc/sway/config.d/*
 
