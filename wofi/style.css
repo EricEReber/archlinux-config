@@ -28,17 +28,16 @@ window {
 }
 
 #inner-box {
-	background-color: #dddddd;
+	background-color: transparent;
     border-radius: 16px;
 }
 
 #outer-box {
 	margin: 5px;
-	padding:10px;
 	border-radius: 16px;
     margin-left: auto;
     margin-right: auto;
-	background-color: #dddddd;
+	background-color: #d8d8d8;
 }
 
 #scroll {
@@ -60,9 +59,9 @@ window {
 }
 
 #entry:focus {
-	background-color: #dddddd;
+	background-color: #d8d8d8;
     border-radius: 16px;
-    color: #dddddd;
+    color: #d8d8d8;
 }
 
 #text:selected {
