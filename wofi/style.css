@@ -16,6 +16,7 @@ window {
 	background-color: transparent;
     border-radius: 0px;
     padding: 0px;
+    width: 300px;
 }
 
 #input {
@@ -24,17 +25,20 @@ window {
 	border-bottom: 5px #FFFFFF;
 	background-color: #FFFFFF;
 	color: black;
+    width: 300px;
 }
 
 #inner-box {
-	background-color: #FFFFFF;
+	background-color: #dddddd;
     border-radius: 16px;
+    width: 300px;
 }
 
 #outer-box {
 	margin: 5px;
 	padding:10px;
 	border-radius: 16px;
+    width: 300px;
 	background-color: #dddddd;
 }
 
@@ -43,6 +47,7 @@ window {
 
 #text {
 	padding: 5px;
+    width: 300px;
 	color: black;
 }
 
@@ -52,12 +57,15 @@ window {
 
 #entry:selected {
 	background-color: #0088cc;
-    color: black;
+    width: 300px;
+    border-radius: 16px;
+    color: #0088cc;
 }
 
 #entry:focus {
 	background-color: #dddddd;
-    color: black;
+    width: 300px;
+    color: #dddddd;
 }
 
 #text:selected {
