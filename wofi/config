@@ -3,4 +3,5 @@ key_up=K
 key_down=J
 insensitive=true
 width=290
-height=205
+height=98
+location=bottom
