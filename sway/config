@@ -153,15 +153,20 @@ input * {
 }
 
 input type:pointer {
-	pointer_accel 0.3
+	pointer_accel 0.17
 	accel_profile "flat"
 }
 
 input type:touchpad {
-	pointer_accel 0.3
+	pointer_accel 0.17
 	tap enabled
 	natural_scroll enabled
 }
+
+#bindsym Mod1+c exec bash -c 'app=$(swaymsg -t get_tree | jq -r ".. | objects | select(.focused? == true) | .app_id // .name") if echo "$app" | grep -iq "kitty"; then wtype -M ctrl -M shift -k c -m shift -m ctrl else wtype -M ctrl -k c -m ctrl fi'
+#
+#bindsym Mod1+v exec bash -c 'app=$(swaymsg -t get_tree | jq -r ".. | objects | select(.focused? == true) | .app_id // .name") if echo "$app" | grep -iq "kitty"; then wtype -M ctrl -M shift -k v -m shift -m ctrl else wtype -M ctrl -k v -m ctrl fi'
+#
 
 ### media controls
 
