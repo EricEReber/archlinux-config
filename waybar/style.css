@@ -174,7 +174,7 @@
 #workspaces button.focused {
     border-color: white;
     color: white;
-    background-color: #888888;
+    background-color: #0088cc;
 }
 
 #workspaces button.urgent {
