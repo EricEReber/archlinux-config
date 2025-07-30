@@ -149,6 +149,25 @@ gpg-connect-agent updatestartuptty /bye >/dev/null
 export PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python
 bindkey -v
 
+# Start ssh-agent only if it's not already running
+SSH_ENV="$HOME/.ssh/agent-environment"
+
+function start_agent {
+    echo "Starting new ssh-agent..."
+    eval "$(ssh-agent -s)" > "$SSH_ENV"
+    echo "SSH_AGENT_PID=$SSH_AGENT_PID" >> "$SSH_ENV"
+    echo "export SSH_AGENT_PID SSH_AUTH_SOCK" >> "$SSH_ENV"
+    ssh-add ~/.ssh/id_ed25519
+}
+
+if [ -f "$SSH_ENV" ]; then
+    source "$SSH_ENV" > /dev/null
+    if ! kill -0 "$SSH_AGENT_PID" 2>/dev/null; then
+        start_agent
+    fi
+else
+    start_agent
+fi
 # echo "Hello Eric, welcome to the terminal. What can I help you with?" | espeak -s 150
 
 
