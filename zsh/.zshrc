@@ -2,6 +2,9 @@
 # options
 setopt dotglob
 
+# fzf
+source <(fzf --zsh)
+
 # z
 source ${XDG_CONFIG_HOME}/zsh/z.zsh
 source ${XDG_CONFIG_HOME}/zsh/termtitle.zsh
