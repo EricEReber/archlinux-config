@@ -64,7 +64,7 @@ alias gpl="git pull"
 alias gch="git checkout"
 
 # xrandr alias
-alias monitor='xrandr --auto --output DP-3 --left-of eDP-1'
+alias monitor='xrandr --auto --output DP-3 --above eDP-1'
 
 # python aliases
 alias python='python3'
