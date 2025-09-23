@@ -1,0 +1,8 @@
+{
+    "suggest.noselect": true,
+    "inlayHint.enable": false,
+    "r.lsp.diagnostics": false,
+	"python.formatting.provider": "black",
+	"python.formatting.blackPath": "/usr/bin/black",
+	"coc.preferences.formatOnSaveFiletypes": ["python"]
+}
