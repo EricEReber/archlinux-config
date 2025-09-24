@@ -77,6 +77,7 @@ alias act='source env/bin/activate'
 
 # other aliases
 alias euler='ssh -Y rebere@euler.ethz.ch'
+alias gauss='ssh -l ereber cluster.s3it.uzh.ch'
 alias batt='upower -i /org/freedesktop/UPower/devices/battery_BAT1'
 alias sshuio='ssh -YC ericer@login.ifi.uio.no'
 alias uiomount='sshfs ericer@login.ifi.uio.no:. ~/ifilocal'
@@ -110,11 +111,11 @@ function biology(){
 
 function venv(){
     py -m venv --system-site-packages $*
-# source $*/bin/activate  # commented out by conda initialize
+    source venv/bin/activate  # commented out by conda initialize
 }
 
 function ve(){
-# source $*/bin/activate  # commented out by conda initialize
+    source venv/bin/activate  # commented out by conda initialize
 }
 
 # jay hanssen special "ultradog"
