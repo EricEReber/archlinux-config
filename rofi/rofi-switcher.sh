@@ -3,7 +3,7 @@ set -euo pipefail
 
 ROFI=${ROFI:-rofi}
 # Point this to your theme file:
-THEME="${ROFI_THEME:-/home/eric/.config/rofi/themes/spotlight.rasi}"
+THEME="${ROFI_THEME:-/home/eric/.config/rofi/themes/spotlight-dark.rasi}"
 
 # Only pass -theme if the file exists
 theme_args=()
