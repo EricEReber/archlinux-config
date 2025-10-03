@@ -3,9 +3,9 @@ local function map(m, k, v)
 end
 
 -- Clear search highlights with <leader><CR>
-vim.keymap.set('n', '<leader><CR>', function()
-  vim.cmd('nohlsearch')
-end, { silent = true, desc = 'Clear search highlights' })
+-- vim.keymap.set('n', '<leader><CR>', function()
+--   vim.cmd('nohlsearch')
+-- end, { silent = true, desc = 'Clear search highlights' })
 
 -- Do an operator on every line in the file (dag, yag, =ag)
 map("x", "ag", "ggoG")
@@ -26,10 +26,10 @@ map("v", "<leader>y", "\"+y")
 
 map("n", "gp", ":put<CR>")
 vim.keymap.set("n", "<leader>w", ":WordMotionToggle<cr>", { nowait = true})
-map("n", "<BS>", ":NvimTreeToggle<CR>")
+map("n", "<leader><BS>", ":NvimTreeToggle<CR>")
 
 -- remove ighlight for last searched
-map("n", "<leader><BS>", ":noh<CR>")
+map("n", "<BS>", ":noh<CR>")
 
 -- schmoovement
 vim.keymap.set("n", "J", ":keepjumps normal! }<CR>", { remap = true, silent = true })
