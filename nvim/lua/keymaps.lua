@@ -2,6 +2,11 @@ local function map(m, k, v)
 	vim.keymap.set(m, k, v, { silent = true })
 end
 
+-- Clear search highlights with <leader><CR>
+vim.keymap.set('n', '<leader><CR>', function()
+  vim.cmd('nohlsearch')
+end, { silent = true, desc = 'Clear search highlights' })
+
 -- Do an operator on every line in the file (dag, yag, =ag)
 map("x", "ag", "ggoG")
 map("o", "ag", ":normal Vag<cr>")
