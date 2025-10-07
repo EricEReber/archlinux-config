@@ -81,6 +81,7 @@ alias gauss='ssh -l ereber cluster.s3it.uzh.ch'
 alias batt='upower -i /org/freedesktop/UPower/devices/battery_BAT1'
 alias sshuio='ssh -YC ericer@login.ifi.uio.no'
 alias uiomount='sshfs ericer@login.ifi.uio.no:. ~/ifilocal'
+alias uzhmount='sudo mount -t cifs -o username=ereber //idnas37.d.uzh.ch/G_DQBM_BB_Central$ /mnt/central_nas'
 alias :q='exit'
 alias c='z' # c is easier to hit
 alias pac='sudo pacman -Syu'
