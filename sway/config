@@ -181,11 +181,14 @@ bindsym XF86AudioLowerVolume exec pamixer -d 5
 bindsym XF86Tools exec imv "$XDG_CONFIG_HOME"/sway/backgrounds/sched.png
 
 # printscreen
-bindsym Print exec grim -g "$($XDG_CONFIG_HOME/sway/wl-select)" - | wl-copy
+# bindsym Print exec grim -g "$($XDG_CONFIG_HOME/sway/wl-select)" - | wl-copy
 
 # brightness
 bindsym XF86MonBrightnessDown exec brillo -u 150000 -U 10
 bindsym XF86MonBrightnessUp exec brillo -u 150000 -A 10
+
+# screenshot
+bindsym Print exec flameshot gui --clipboard
 
 include /etc/sway/config.d/*
 
