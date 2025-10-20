@@ -162,3 +162,9 @@ vim.api.nvim_create_autocmd("BufRead", {
         vim.opt.cmdheight = 2  -- to stop stupid confirmation message
     end,
 })
+
+vim.api.nvim_create_autocmd("VimEnter", {
+  callback = function()
+    vim.cmd("WordMotionToggle")
+  end,
+})

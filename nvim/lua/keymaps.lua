@@ -28,6 +28,37 @@ map("n", "gp", ":put<CR>")
 vim.keymap.set("n", "<leader>w", ":WordMotionToggle<cr>", { nowait = true})
 map("n", "<leader><BS>", ":NvimTreeToggle<CR>")
 
+-- for auto toggle wordmotion for W and B
+vim.keymap.set("n", "W", function()
+  vim.cmd("WordMotionToggle")
+  vim.cmd("normal! w")
+  vim.cmd("WordMotionToggle")
+end, { nowait = true, silent = true })
+
+vim.keymap.set("n", "B", function()
+  vim.cmd("WordMotionToggle")
+  vim.cmd("normal! b")
+  vim.cmd("WordMotionToggle")
+end, { nowait = true, silent = true })
+
+local function w_with_toggle()
+  vim.cmd("WordMotionToggle")
+  -- toggle back after the motion has been applied
+  vim.schedule(function() vim.cmd("WordMotionToggle") end)
+  return "w"
+end
+
+local function b_with_toggle()
+  vim.cmd("WordMotionToggle")
+  -- toggle back after the motion has been applied
+  vim.schedule(function() vim.cmd("WordMotionToggle") end)
+  return "b"
+end
+
+vim.keymap.set({ "o", "x" }, "W", w_with_toggle, { nowait = true, expr = true, silent = true })
+vim.keymap.set({ "o", "x" }, "B", b_with_toggle, { nowait = true, expr = true, silent = true })
+
+
 -- remove ighlight for last searched
 map("n", "<BS>", ":noh<CR>")
 
