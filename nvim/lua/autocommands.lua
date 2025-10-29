@@ -48,6 +48,7 @@ vim.api.nvim_create_autocmd("FileType", {
         vim.b.coc_diagnostic_disable = 1
         vim.api.nvim_buf_set_keymap(0, 'n', '<leader>b', ":!ruff format %<CR>", { noremap = true, silent = true })
         vim.opt_local.foldmethod = 'indent'
+        vim.fn.matchadd("Todo", [[\v<(TODO|FIXME|NOTE)>]])
     end,
 })
 
