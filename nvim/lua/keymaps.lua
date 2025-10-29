@@ -55,6 +55,25 @@ local function b_with_toggle()
   return "b"
 end
 
+for _, m in ipairs({'n','x','o'}) do
+  vim.keymap.set(m, '<A-w>', function()
+    vim.cmd('normal! W')
+  end, { noremap = true, silent = true })
+end
+
+for _, m in ipairs({'n','x','o'}) do
+  vim.keymap.set(m, '<A-b>', function()
+    vim.cmd('normal! B')
+  end, { noremap = true, silent = true })
+end
+-- vim.keymap.set('n', '<A-w>', function()
+--   vim.cmd('normal! W')
+-- end, { noremap = true })
+--
+-- vim.keymap.set('n', '<A-b>', function()
+--   vim.cmd('normal! B')
+-- end, { noremap = true })
+
 vim.keymap.set({ "o", "x" }, "W", w_with_toggle, { nowait = true, expr = true, silent = true })
 vim.keymap.set({ "o", "x" }, "B", b_with_toggle, { nowait = true, expr = true, silent = true })
 
