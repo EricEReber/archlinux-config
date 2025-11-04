@@ -214,6 +214,8 @@ return {
                         ["ac"] = "@class.outer",
                         ["al"] = "@loop.outer",
                         ["il"] = "@loop.inner",
+                        ["ai"] = "@conditional.outer", 
+                        ["ii"] = "@conditional.inner", 
                     },
                 },
             },
