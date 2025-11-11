@@ -1,6 +1,0 @@
-configuration {
-  matching: "prefix";
-  sorting-method: "fzf";      
-  sort: true;                
-  case-sensitive: false;
-}

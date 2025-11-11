@@ -1,0 +1,9 @@
+image=/home/eric/.config/sway/backgrounds/union.png
+ignore-empty-password
+show-failed-attempts
+indicator-y-position=800
+ring-color=0000ff
+key-hl-color=0000aa
+text-color=000000
+inside-color=5291e2
+daemonize
