@@ -101,6 +101,10 @@ alias de='deactivate'
 # this is to make latex installer work
 alias tlmgr='/usr/share/texmf-dist/scripts/texlive/tlmgr.pl --usermode'
 
+function send() {
+    scp "$@" ereber@cluster.s3it.uzh.ch:/home/ereber/scratch/code
+}
+
 function jup(){
     jupyter notebook $*
 }
