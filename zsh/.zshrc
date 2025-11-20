@@ -101,10 +101,33 @@ alias de='deactivate'
 # this is to make latex installer work
 alias tlmgr='/usr/share/texmf-dist/scripts/texlive/tlmgr.pl --usermode'
 
-function send() {
-    scp "$@" ereber@cluster.s3it.uzh.ch:/home/ereber/scratch/code
-}
+# function send() {
+#     scp "$@" ereber@cluster.s3it.uzh.ch:/home/ereber/scratch/code
+# }
 
+function send() {
+    # send -r src newname     -> rename mode
+    # send file1 file2 ...    -> normal mode
+
+    local rename_mode=false
+
+    if [[ "$1" == "-r" ]]; then
+        rename_mode=true
+        shift
+    fi
+
+    if $rename_mode; then
+        if [[ $# -ne 2 ]]; then
+            echo "Usage: send -r <source_file> <remote_new_name>"
+            return 1
+        fi
+        local src="$1"
+        local newname="$2"
+        scp "$src" "ereber@cluster.s3it.uzh.ch:/home/ereber/scratch/code/$newname"
+    else
+        scp "$@" "ereber@cluster.s3it.uzh.ch:/home/ereber/scratch/code/"
+    fi
+}
 function jup(){
     jupyter notebook $*
 }
