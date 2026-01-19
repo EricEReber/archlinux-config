@@ -123,9 +123,9 @@ function send() {
         fi
         local src="$1"
         local newname="$2"
-        scp "$src" "ereber@cluster.s3it.uzh.ch:/home/ereber/scratch/code/$newname"
+        scp "$src" "ereber@cluster.s3it.uzh.ch:/home/ereber/scratch_copy/code/$newname"
     else
-        scp "$@" "ereber@cluster.s3it.uzh.ch:/home/ereber/scratch/code/"
+        scp "$@" "ereber@cluster.s3it.uzh.ch:/home/ereber/scratch_copy/code/"
     fi
 }
 function jup(){
