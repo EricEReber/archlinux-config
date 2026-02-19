@@ -26,6 +26,9 @@ zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:git:*' formats '(%F{046}%c%u%b%f%f) '
 zstyle ':vcs_info:git:*' actionformats '(%b|%a)'
 
+# docker
+export DOCKER_HOST=unix:///run/docker.sock
+
 # prompt
 export NEWLINE=$'\n'
 rightarrow=$(echo -en '\u25aa')
