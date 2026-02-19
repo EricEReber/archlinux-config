@@ -97,6 +97,7 @@ alias urlit='dogshit.txt'
 alias bio='biology'
 alias dock='systemctl --user start docker-desktop'
 alias de='deactivate'
+alias steinbock="docker run -v /path/to/data:/data -u $(id -u):$(id -g) --network host -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY ghcr.io/bodenmillergroup/steinbock:0.16.1"
 
 # this is to make latex installer work
 alias tlmgr='/usr/share/texmf-dist/scripts/texlive/tlmgr.pl --usermode'
